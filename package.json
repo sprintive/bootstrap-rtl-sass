@@ -1,8 +1,18 @@
 {
-  "name": "bootstrap-sass-rtl",
-  "version": "3.3.x",
+  "name": "bootstrap-rtl-sass",
+  "version": "3.3.7",
   "repository": {
     "type": "git",
-    "url": "git@github.com:sprintive/bootstrap-rtl-sass.git"
-  }
+    "url": "git+ssh://git@github.com/sprintive/bootstrap-rtl-sass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sprintive/bootstrap-rtl-sass/issues"
+  },
+  "homepage": "https://github.com/sprintive/bootstrap-rtl-sass#readme",
+  "keywords": [
+    "RTL"
+  ],
+  "author": "Sprintive",
+  "license": "MIT",
+  "description": "SCSS Flipped version of bootstrap RTL "
 }
