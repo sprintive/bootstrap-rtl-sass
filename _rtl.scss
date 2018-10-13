@@ -1,0 +1,774 @@
+@import "mixins/mixins";
+
+// RTL Alerts
+.alert-dismissable,
+.alert-dismissible {
+  padding-left: ($alert-padding + 20);
+  padding-right: ($alert-padding);
+  .close {
+    right: auto;
+    left: -21px;
+  }
+}
+
+// RTL Badges.
+.badge {
+  .list-group-item > & {
+    float: left;
+  }
+
+  .list-group-item > & + & {
+    margin-left: 5px;
+    margin-right: auto;
+  }
+
+  .nav-pills > li > a > & {
+    margin-left: 0px;
+    margin-right: 3px;
+  }
+}
+
+// RTL Button groups
+.btn-group,
+.btn-group-vertical {
+  > .btn {
+    float: right;
+  }
+}
+
+.btn-group {
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group {
+    margin-right: -1px;
+    margin-left: 0px;
+  }
+}
+
+.btn-toolbar {
+  margin-right: -5px;
+  margin-left: 0px;
+
+  .btn-group,
+  .input-group {
+    float: right;
+  }
+  > .btn,
+  > .btn-group,
+  > .input-group {
+    margin-right: 5px;
+    margin-left: 0px;
+  }
+}
+
+.btn-group > .btn:first-child {
+  margin-right: 0;
+  &:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
+    @include border-left-radius(0);
+  }
+}
+
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+    border-top-left-radius: $border-radius-base;
+    border-bottom-left-radius: $border-radius-base;
+  @include border-right-radius(0);
+}
+
+.btn-group > .btn-group {
+  float: right;
+}
+
+.btn-group.btn-group-justified > .btn,
+.btn-group.btn-group-justified > .btn-group {
+  float: none;
+}
+
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.btn-group > .btn-group:first-child {
+  > .btn:last-child,
+  > .dropdown-toggle {
+    border-top-right-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
+    @include border-left-radius(0);
+  }
+}
+.btn-group > .btn-group:last-child > .btn:first-child {
+    border-top-left-radius: $border-radius-base;
+    border-bottom-left-radius: $border-radius-base;
+  @include border-right-radius(0);
+}
+
+// Reposition the caret
+.btn .caret {
+  margin-right: 0;
+}
+
+.btn-group-vertical {
+
+  > .btn + .btn,
+  > .btn + .btn-group,
+  > .btn-group + .btn,
+  > .btn-group + .btn-group {
+    margin-top: -1px;
+    margin-right: 0;
+  }
+}
+
+
+// RTL Close icons
+.close {
+  float: left;
+}
+
+// RTL Dropdown
+.caret {
+  margin-right: 2px;
+  margin-left: 0;
+}
+
+.caret {
+  margin-right: 2px;
+  margin-left: 0;
+}
+
+.dropdown-menu {
+  right: 0;
+  left: auto;
+  float: left;
+  text-align: right;
+
+  &.pull-right {
+    left: 0;
+    right: auto;
+    float: right;
+  }
+}
+
+.dropdown-menu-right {
+  left: auto;
+  right: 0;
+}
+
+.dropdown-menu-left {
+  left: 0;
+  right: auto;
+}
+
+@media (min-width: $grid-float-breakpoint) {
+  .navbar-right {
+    .dropdown-menu {
+      left: 0;
+      right: auto;
+    }
+    .dropdown-menu-left {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+// RTL Forms
+.radio,
+.checkbox {
+  label {
+    padding-right: 20px;
+    padding-left: initial;
+  }
+}
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  margin-right: -20px;
+  margin-left: auto;
+}
+
+.radio-inline,
+.checkbox-inline {
+  padding-right: 20px;
+  padding-left: 0;
+}
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.has-feedback {
+  .form-control {
+    padding-left: ($input-height-base * 1.25);
+    padding-right: 12px;
+  }
+}
+
+.form-control-feedback {
+  left: 0;
+  right: auto;
+}
+
+.form-inline {
+  @media (min-width: $screen-sm-min) {
+
+      label {
+        padding-right: 0;
+        padding-left: initial;
+      }
+
+    .radio input[type="radio"],
+    .checkbox input[type="checkbox"] {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+  }
+}
+
+.form-horizontal {
+  @media (min-width: $screen-sm-min) {
+    .control-label {
+      text-align: left;
+    }
+  }
+
+  .has-feedback .form-control-feedback {
+    left: ($grid-gutter-width / 2);
+    right: auto;
+  }
+}
+
+// RTL Alerts
+@include make-rtl-grid(xs);
+
+@media (min-width: $screen-sm-min) {
+  @include make-rtl-grid(sm);
+}
+
+@media (min-width: $screen-md-min) {
+  @include make-rtl-grid(md);
+}
+
+@media (min-width: $screen-lg-min) {
+  @include make-rtl-grid(lg);
+}
+
+// RTL Input groups
+.input-group {
+  .form-control {
+    float: right;
+  }
+}
+
+.input-group .form-control:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+  @include border-right-radius($border-radius-base);
+  @include border-left-radius(0);
+}
+.input-group-addon:first-child {
+  border-left: 0px;
+  border-right: 1px solid;
+}
+
+.input-group .form-control:last-child,
+.input-group-addon:last-child,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+  @include border-left-radius($border-radius-base);
+  @include border-right-radius(0);
+}
+.input-group-addon:last-child {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-right: 0px;
+}
+
+.input-group-btn {
+  > .btn {
+    + .btn {
+      margin-right: -1px;
+      margin-left: auto;
+    }
+  }
+
+  &:first-child {
+    > .btn,
+    > .btn-group {
+      margin-left: -1px;
+      margin-right: auto;
+    }
+  }
+  &:last-child {
+    > .btn,
+    > .btn-group {
+      margin-right: -1px;
+      margin-left: auto;
+    }
+  }
+}
+
+// List groups
+// --------------------------------------------------
+.list-group {
+  padding-right: 0;
+  padding-left: initial;
+}
+
+// RTL Media
+.media {
+  > .pull-left {
+    margin-right: 10px;
+  }
+  > .pull-right {
+      margin-left: 10px;
+  }
+}
+
+.media-right,
+.media > .pull-right {
+  padding-right: 10px;
+  padding-left: initial;
+}
+
+.media-left,
+.media > .pull-left {
+  padding-left: 10px;
+  padding-right: initial;
+}
+
+.media-list {
+  padding-right: 0;
+  padding-left: initial;
+  list-style: none;
+}
+
+// RTL Modals
+.modal-footer {
+  text-align: left;
+  
+  .btn + .btn {
+    margin-left: auto;
+    margin-right: 5px;
+  }
+
+  .btn-group .btn + .btn {
+    margin-right: -1px;
+    margin-left: auto;
+  }
+
+  .btn-block + .btn-block {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+// RTL Navbars
+.navbar-header {
+  @media (min-width: $grid-float-breakpoint) {
+    float: right;
+  }
+}
+
+.navbar-collapse {
+  padding-right: $navbar-padding-horizontal;
+  padding-left:  $navbar-padding-horizontal;
+}
+
+.navbar-brand {
+  float: right;
+
+  @media (min-width: $grid-float-breakpoint) {
+    .navbar > .container &,
+    .navbar > .container-fluid & {
+      margin-right: -$navbar-padding-horizontal;
+      margin-left: auto;
+    }
+  }
+}
+
+.navbar-toggle {
+  float: left;
+  margin-left: $navbar-padding-horizontal;
+  margin-right: auto;
+}
+
+.navbar-nav {
+  @media (max-width: $grid-float-breakpoint-max) {
+    .open .dropdown-menu {
+      > li > a,
+      .dropdown-header {
+        padding: 5px 25px 5px 15px;
+      }
+    }
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    float: right;
+
+    > li {
+      float: right;
+    }
+  }
+}
+
+@media (min-width: $grid-float-breakpoint) {
+  .navbar-left {
+
+    &.flip {
+      float: right !important;
+    }
+  }
+
+  .navbar-right {
+    &:last-child {
+      margin-left: -$navbar-padding-horizontal;
+      margin-right: auto;
+    }
+
+    &.flip {
+      float: left !important;
+      margin-left: -$navbar-padding-horizontal;
+      margin-right: auto;
+    }
+
+    .dropdown-menu {
+      left: 0;
+      right: auto;
+    }
+  }
+}
+
+.navbar-text {
+  @media (min-width: $grid-float-breakpoint) {
+    float: right;
+    &.navbar-right:last-child {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+}
+
+// RTL Navs
+.nav {
+  padding-right: 0;
+  padding-left: initial;
+}
+
+.nav-tabs {
+  > li {
+    float: right;
+    > a {
+      margin-left: auto;
+      margin-right: -2px;
+      border-radius: $border-radius-base $border-radius-base 0 0;
+    }
+  }
+}
+
+.nav-pills {
+  > li {
+    float: right;
+
+    // Links rendered as pills
+    > a {
+      border-radius: $nav-pills-border-radius;
+    }
+    + li {
+      margin-right: 2px;
+      margin-left: auto;
+    }
+  }
+}
+
+.nav-stacked {
+  > li {
+    float: none;
+    + li {
+      margin-right: 0; 
+      margin-left: auto;
+    }
+  }
+}
+
+.nav-justified {
+  > .dropdown .dropdown-menu {
+    right: auto;
+  }
+}
+
+.nav-tabs-justified {
+
+  > li > a {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    > li > a {
+      border-radius: $border-radius-base $border-radius-base 0 0;
+    }
+  }
+}
+
+// RTL Normalizer
+html {
+  direction: rtl;
+}
+
+body {
+  direction: rtl;
+}
+
+// RTL Pager pagination
+.pager {
+  padding-right: 0;
+  padding-left: initial;
+  .next {
+    > a,
+    > span {
+      float: left;
+    }
+  }
+  .previous {
+    > a,
+    > span {
+      float: right;
+    }
+  }
+}
+
+// RTL Pagination
+.pagination {
+  padding-right: 0;
+
+  > li {
+    > a,
+    > span {
+      float: right;
+      margin-right: -1px;
+      margin-left: 0px;
+    }
+    &:first-child {
+      > a,
+      > span {
+        margin-left: 0;
+        @include border-right-radius($border-radius-base);
+        @include border-left-radius(0);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        margin-right: -1px;
+        @include border-left-radius($border-radius-base);
+        @include border-right-radius(0);
+      }
+    }
+  }
+}
+
+// RTL Panels
+.panel {
+  > .table:first-child,
+  > .table-responsive:first-child > .table:first-child {
+
+    > thead:first-child,
+    > tbody:first-child {
+      > tr:first-child {
+        td:first-child,
+        th:first-child {
+          border-top-right-radius: ($panel-border-radius - 1);
+          border-top-left-radius: 0;
+        }
+        td:last-child,
+        th:last-child {
+          border-top-left-radius: ($panel-border-radius - 1);
+          border-top-right-radius: 0;
+        }
+      }
+    }
+  }
+
+  > .table:last-child,
+  > .table-responsive:last-child > .table:last-child {
+
+    > tbody:last-child,
+    > tfoot:last-child {
+      > tr:last-child {
+        td:first-child,
+        th:first-child {
+          border-bottom-left-radius: ($panel-border-radius - 1);
+          border-top-right-radius: 0;
+        }
+        td:last-child,
+        th:last-child {
+          border-bottom-right-radius: ($panel-border-radius - 1);
+          border-top-left-radius: 0;
+        }
+      }
+    }
+  }
+  > .table-bordered,
+  > .table-responsive > .table-bordered {
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th:first-child,
+        > td:first-child {
+          border-right: 0;
+          border-left: none;
+        }
+        > th:last-child,
+        > td:last-child {
+          border-right: none;
+          border-left: 0;
+        }
+      }
+    }
+  }
+}
+
+// RTL Popovers
+.popover {
+  left: auto;
+  text-align: right;
+}
+
+.popover {
+  &.top > .arrow {
+    right: 50%;
+    left: auto;
+    margin-right: -$popover-arrow-outer-width;
+    margin-left: auto;
+    &:after {
+      margin-right: -$popover-arrow-width;
+      margin-left: auto;
+    }
+  }
+  &.bottom > .arrow {
+    right: 50%;
+    left: auto;
+    margin-right: -$popover-arrow-outer-width;
+    margin-left: auto;
+    &:after {
+      margin-right: -$popover-arrow-width;
+      margin-left: auto;
+    }
+  }
+}
+
+// RTL Progress bars
+.progress-bar {
+  float: right;
+}
+
+// RTL Responsive.
+.embed-responsive {
+  .embed-responsive-item,
+  iframe,
+  embed,
+  object {
+    right: 0;
+    left: auto;
+  }
+}
+
+// Tables
+caption {
+  text-align: right;
+}
+
+th {
+  text-align: right;
+}
+
+.table-responsive {
+  @media screen and (max-width: $screen-xs-max) {
+
+    > .table-bordered {
+      border: 0;
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-right: 0;
+            border-left: initial;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-left: 0;
+            border-right: initial;
+          }
+        }
+      }
+    }
+  }
+}
+
+// RTL Typography
+.list-unstyled {
+  padding-right: 0;
+  padding-left: initial;
+}
+
+.list-inline {
+  @include list-unstyled;
+  margin-right: -5px;
+  margin-left: 0;
+}
+
+dd {
+  margin-right: 0; 
+  margin-left: initial;
+}
+
+.dl-horizontal {
+  @media (min-width: $grid-float-breakpoint) {
+    dt {
+      float: right;
+      clear: right;
+      text-align: left;
+    }
+    dd {
+      margin-right: $component-offset-horizontal;
+      margin-left: 0;
+    }
+  }
+}
+
+blockquote {
+  border-right: 5px solid $blockquote-border-color;
+  border-left: 0;
+}
+
+.blockquote-reverse,
+blockquote.pull-left {
+  padding-left: 15px;
+  padding-right: 0;
+  border-left: 5px solid $blockquote-border-color;
+  border-right: 0;
+  text-align: left;
+}
+
+// RTL Utility 
+.pull-right {
+  float: left !important;
+}
+.pull-left {
+  float: right !important;
+}

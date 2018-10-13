@@ -1,0 +1,44 @@
+ @media(max-width: 767px) {
+  header.navbar-default {
+    .navbar-collapse {
+      .navbar-nav {
+          li {
+            &.expanded.dropdown {
+              >a {
+                float: right;
+              }
+              .dropdown-toggle {
+                i {
+                  float: left;
+                }
+              }
+              .dropdown-menu {
+                li {
+                  a {
+                    padding-left: 0px;
+                    padding-right: 25px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .navbar-toggle {
+        margin-top: 27px;
+      }
+    }
+    .user-logged-in {
+      #block-usermenu,
+      .block-language {
+        a {
+          padding: 0 0 0 5px;
+        }
+      }
+    }
+    #block-usermenu,
+    .block-language {
+      padding: 10px 0px 10px 10px;
+      float: right !important;
+    }
+  }
