@@ -1,5 +1,6 @@
 {
   "name": "bootstrap-sass-rtl",
+  "version": "3.3.x",
   "repository": {
     "type": "git",
     "url": "git@github.com:sprintive/bootstrap-rtl-sass.git"
